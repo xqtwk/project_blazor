@@ -1,0 +1,51 @@
+﻿@page "/client/delete/{clientId:int}"
+@using BlazorApp1.Shared.Models
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+<h2>Delete Client</h2>
+<br />
+<div class="form-group">
+	<h4>Do you want to delete this client?</h4>
+	<table class="table">
+		<tbody>
+		<tr>
+			<td>Name</td>
+			<td>@client.ClientName</td>
+		</tr>
+		<tr>
+			<td>Address</td>
+			<td>@client.Address</td>
+		</tr>
+		<tr>
+			<td>Cell No</td>
+			<td>@client.CellNumber</td>
+		</tr>
+		<tr>
+			<td>E-mail</td>
+			<td>@client.EmailId</td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+<div class="form-group">
+	<input type="submit" value="Delete" @onclick="(async () => await RemoveClient(client.ClientId))" class="btn btn-danger" />
+	<input type="submit" value="Cancel" @onclick="(() => Cancel())" class="btn btn-warning" />
+</div>
+@code {
+	[Parameter]
+	public int clientId { get; set; }
+	Client client = new Client();
+	protected override async Task OnInitializedAsync()
+	{
+		client = await Http.GetFromJsonAsync<Client>("/api/Client/" + Convert.ToInt32(clientId));
+	}
+	protected async Task RemoveClient(int clientID)
+	{
+		await Http.DeleteAsync("api/Client/" + clientID);
+		NavigationManager.NavigateTo("/fetchclientdetails");
+	}
+	void Cancel()
+	{
+		NavigationManager.NavigateTo("/fetchclientdetails");
+	}
+}
