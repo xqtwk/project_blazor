@@ -1,0 +1,77 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = BlazorApp1.Client
+build_property.RootNamespace = BlazorApp1.Client
+build_property.ProjectDir = C:\Users\666\source\repos\BlazorApp1\BlazorApp1\Client\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\666\source\repos\BlazorApp1\BlazorApp1\Client
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/666/source/repos/BlazorApp1/BlazorApp1/Client/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/666/source/repos/BlazorApp1/BlazorApp1/Client/Pages/AddClient.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkQ2xpZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/666/source/repos/BlazorApp1/BlazorApp1/Client/Pages/AddParent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkUGFyZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/666/source/repos/BlazorApp1/BlazorApp1/Client/Pages/AddStudent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkU3R1ZGVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/666/source/repos/BlazorApp1/BlazorApp1/Client/Pages/AddTeacher.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkVGVhY2hlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/666/source/repos/BlazorApp1/BlazorApp1/Client/Pages/ClientDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50RGV0YWlscy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/666/source/repos/BlazorApp1/BlazorApp1/Client/Pages/DeleteClient.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVsZXRlQ2xpZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/666/source/repos/BlazorApp1/BlazorApp1/Client/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/666/source/repos/BlazorApp1/BlazorApp1/Client/Pages/ParentDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFyZW50RGV0YWlscy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/666/source/repos/BlazorApp1/BlazorApp1/Client/Pages/StudentDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3R1ZGVudERldGFpbHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/666/source/repos/BlazorApp1/BlazorApp1/Client/Pages/TeacherDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVhY2hlckRldGFpbHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/666/source/repos/BlazorApp1/BlazorApp1/Client/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/666/source/repos/BlazorApp1/BlazorApp1/Client/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/666/source/repos/BlazorApp1/BlazorApp1/Client/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-s8xsnq6cv2
+
+[C:/Users/666/source/repos/BlazorApp1/BlazorApp1/Client/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-aw7s1uks9t

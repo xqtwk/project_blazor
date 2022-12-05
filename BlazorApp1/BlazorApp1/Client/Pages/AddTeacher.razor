@@ -1,0 +1,84 @@
+﻿@page "/teacher/add"
+@page "/teacher/edit/{clientId:int}"
+@using BlazorApp1.Shared.Models
+@using System.Runtime.CompilerServices
+@using System.Net.Http.Headers
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+<h1>@Title Teacher</h1>
+<hr />
+<EditForm Model="@client" OnValidSubmit="SaveClient">
+    <DataAnnotationsValidator />
+    <div class="mb-3">
+        <label for="Name" class="form-label">Name</label>
+        <div class="col-md-4">
+            <InputText class="form-control" @bind-Value="client.ClientName" />
+        </div>
+        <ValidationMessage For="@(() => client.ClientName)" />
+    </div>
+    <div class="mb-3">
+        <label for="Name" class="form-label">Surname</label>
+        <div class="col-md-4">
+            <InputText class="form-control" @bind-Value="client.ClientSurname" />
+        </div>
+        <ValidationMessage For="@(() => client.ClientSurname)" />
+    </div>
+    <div class="mb-3">
+        <label for="Address" class="form-label">Address</label>
+        <div class="col-md-4">
+            <InputText class="form-control" @bind-Value="client.Address" />
+        </div>
+        <ValidationMessage For="@(() => client.Address)" />
+    </div>
+    <div class="mb-3">
+        <label for="Cellnumber" class="form-label">Phone number</label>
+        <div class="col-md-4">
+            <InputText class="form-control" @bind-Value="client.CellNumber" />
+        </div>
+        <ValidationMessage For="@(() => client.CellNumber)" />
+    </div>
+    <div class="mb-3">
+        <label for="Emailid" class="form-label">E-mail</label>
+        <div class="col-md-4">
+            <InputText class="form-control" @bind-Value="client.EmailId" />
+        </div>
+        <ValidationMessage For="@(() => client.EmailId)" />
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button class="btn btn-light" @onclick="Cancel">Cancel</button>
+    </div>
+</EditForm>
+@code {
+
+
+    [Parameter]
+    public int clientId { get; set; }
+    protected string Title = "Add";
+    protected Teacher client = new();
+    protected override async Task OnParametersSetAsync()
+    {
+        if (clientId != 0)
+        {
+            Title = "Edit";
+            client = await Http.GetFromJsonAsync<Teacher>("api/Teacher/" + clientId);
+        }
+    }
+    protected async Task SaveClient()
+    {
+        if (client.ClientId != 0)
+        {
+            await Http.PutAsJsonAsync("api/Teacher", client);
+        }
+        else
+        {
+            await Http.PostAsJsonAsync("api/Teacher", client);
+        }
+        Cancel();
+    }
+    public void Cancel()
+    {
+        NavigationManager.NavigateTo("/teacherdetails");
+    }
+}

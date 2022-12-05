@@ -1,0 +1,112 @@
+﻿@page "/fetchclientdetails"
+@using BlazorApp1.Shared.Models
+@using BlazorApp1.Client.Pages
+@inject HttpClient Http
+@inject NavigationManager uriHelper;
+<h1>Client Data</h1>
+<p>Blazor CRUD operation</p>
+<div class="row">
+    <div class="col-md-6">
+
+    </div>
+    <div class="input-group col">
+        <input type="text" class="form-control" placeholder="Search client by name"
+               @bind="SearchString" @bind:event="oninput" @onkeyup="FilterClient" />
+        @if (SearchString.Length > 0)
+        {
+            <div class="input-group-append">
+                <button class="btn btn-danger" @onclick="ResetSearch">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        }
+    </div>
+</div>
+<br />
+@if (clientList == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+	<table class="table table-striped align-middle table-bordered">
+		<thead class="table-success">
+		<tr>
+			<th>ID</th>
+			<th>Vardas</th>
+			<th>Pavardė</th>
+			<th>Adresas</th>
+			<th>Telefonas</th>
+			<th>E-mail</th>
+			<th>Valdymas</th>
+		</tr>
+		</thead>
+		<tbody>
+		@foreach (var client in clientList)
+		{
+			<tr>
+				<td>@client.ClientId</td>
+				<td>@client.ClientName</td>
+				<td>@client.ClientSurname</td>
+				<td>@client.Address</td>
+				<td>@client.CellNumber</td>
+				<td>@client.EmailId</td>
+				<td>
+					<a href='/client/edit/@client.ClientId' class="btn btn-outline-dark" role="button">
+						Edit
+					</a>
+					<a href='/client/delete/@client.ClientId' class="btn btn-outline-danger" role="button">
+						Delete
+					</a>
+				</td>
+			</tr>
+		}
+		</tbody>
+
+	</table>
+
+
+}
+
+
+@code {
+
+
+	protected List<Client> clientList = new();
+    protected List<Client> searchClientData = new();
+    protected Client client = new();
+    protected string SearchString { get; set; } = string.Empty;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetClient();
+    }
+    protected async Task GetClient()
+    {
+        clientList = await Http.GetFromJsonAsync<List<Client>>("api/Client");
+        searchClientData = clientList;
+    }
+    protected void FilterClient()
+    {
+        if (!string.IsNullOrEmpty(SearchString))
+        {
+            clientList = searchClientData
+                .Where(x => x.ClientName.IndexOf(SearchString, StringComparison.OrdinalIgnoreCase) != -1)
+                .ToList();
+        }
+        else
+        {
+            clientList = searchClientData;
+        }
+    }
+    protected void DeleteConfirm(int clientID)
+    {
+        client = clientList.FirstOrDefault(x => x.ClientId == clientID);
+    }
+    public void ResetSearch()
+    {
+        SearchString = string.Empty;
+        clientList = searchClientData;
+    }
+}

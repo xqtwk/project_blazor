@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "dgSpecHash": "Dh69aPfSAGQARD7j1bw5IHJwVo8rnV9V0eriir9eHV7kLGQ8XpL3e+gg+QWIY0vJiItD1shy0SfuITWLe1fG5A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\666\\source\\repos\\BlazorApp1\\BlazorApp1\\Shared\\BlazorApp1.Shared.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\666\\.nuget\\packages\\blazored.modal\\7.1.0\\blazored.modal.7.1.0.nupkg.sha512",
+    "C:\\Users\\666\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.3\\microsoft.aspnetcore.authorization.6.0.3.nupkg.sha512",
+    "C:\\Users\\666\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.3\\microsoft.aspnetcore.components.6.0.3.nupkg.sha512",
+    "C:\\Users\\666\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\6.0.3\\microsoft.aspnetcore.components.analyzers.6.0.3.nupkg.sha512",
+    "C:\\Users\\666\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\6.0.3\\microsoft.aspnetcore.components.forms.6.0.3.nupkg.sha512",
+    "C:\\Users\\666\\.nuget\\packages\\microsoft.aspnetcore.components.web\\6.0.3\\microsoft.aspnetcore.components.web.6.0.3.nupkg.sha512",
+    "C:\\Users\\666\\.nuget\\packages\\microsoft.aspnetcore.http\\2.2.2\\microsoft.aspnetcore.http.2.2.2.nupkg.sha512",
+    "C:\\Users\\666\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\666\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
+    "C:\\Users\\666\\.nuget\\packages\\microsoft.aspnetcore.metadata\\6.0.3\\microsoft.aspnetcore.metadata.6.0.3.nupkg.sha512",
+    "C:\\Users\\666\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.2.0\\microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
+    "C:\\Users\\666\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
+    "C:\\Users\\666\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\666\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.1\\microsoft.extensions.logging.abstractions.6.0.1.nupkg.sha512",
+    "C:\\Users\\666\\.nuget\\packages\\microsoft.extensions.objectpool\\2.2.0\\microsoft.extensions.objectpool.2.2.0.nupkg.sha512",
+    "C:\\Users\\666\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\666\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\666\\.nuget\\packages\\microsoft.jsinterop\\6.0.3\\microsoft.jsinterop.6.0.3.nupkg.sha512",
+    "C:\\Users\\666\\.nuget\\packages\\microsoft.jsinterop.webassembly\\6.0.3\\microsoft.jsinterop.webassembly.6.0.3.nupkg.sha512",
+    "C:\\Users\\666\\.nuget\\packages\\microsoft.net.http.headers\\2.2.0\\microsoft.net.http.headers.2.2.0.nupkg.sha512",
+    "C:\\Users\\666\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
+    "C:\\Users\\666\\.nuget\\packages\\system.io.pipelines\\6.0.2\\system.io.pipelines.6.0.2.nupkg.sha512",
+    "C:\\Users\\666\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\666\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
