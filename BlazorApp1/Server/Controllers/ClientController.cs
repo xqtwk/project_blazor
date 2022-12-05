@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using BlazorApp1.Server.Interfaces;
 using BlazorApp1.Server.Models;
 using BlazorApp1.Shared.Models;
@@ -52,7 +53,7 @@ namespace BlazorApp1.Server.Controllers
         [HttpPost]
         public void Post(Shared.Models.Client client)
         {
-            _IClient.AddClient(client);
+            _IClient.AddClient(client);   // ЗАГРУЗКУ ФАЙЛОВ НУЖНО ПИСАТЬ ТУТ!
         }
 
         [HttpPut]
@@ -68,21 +69,23 @@ namespace BlazorApp1.Server.Controllers
             return Ok();
         }
         [HttpPost]
-        public async Task<IActionResult> AddFile(IFormFile uploadedFile)
+        public async Task<IActionResult> AddFile(ClientViewModel cvm)
         {
-            if (uploadedFile != null)
+            if (cvm.Avatar != null)
             {
-                // путь к папке Files
-                string path = "/Files/" + uploadedFile.FileName;
-                // сохраняем файл в папку Files в каталоге wwwroot
-                using (var fileStream = new FileStream(_appEnvironment.WebRootPath + path, FileMode.Create))
-                {
-                    await uploadedFile.CopyToAsync(fileStream);
-                }
-                FileModel file = new FileModel { Name = uploadedFile.FileName, Path = path };
-                _context.Files.Add(file);
-                _context.SaveChanges();
+                
+                    byte[] imageData = null;
+                    // считываем переданный файл в массив байтов
+                    using (var binaryReader = new BinaryReader(pvm.Avatar.OpenReadStream()))
+                    {
+                        imageData = binaryReader.ReadBytes((int)pvm.Avatar.Length);
+                    }
+                    // установка массива байтов
+                    person.Avatar = imageData;
+                
             }
+            _context.Clients.Add(ClientViewModel);
+            _context.SaveChanges();
 
             return RedirectToAction("Index");
         }

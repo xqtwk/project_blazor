@@ -25,8 +25,10 @@ namespace BlazorApp1.Shared.Models
         [Required]
         [EmailAddress]
         public string EmailId { get; set; } = null!;
-        [ForeignKey(nameof(FileModel))]
-        public byte[] FileModel { get; set; }
+        /*[ForeignKey(nameof(FileModel))]
+        public byte[] FileModel { get; set; }*/
+        public string? FileName { get; set; }
+        public string? StoredFileName { get; set; }
 
         public string FullName
         {

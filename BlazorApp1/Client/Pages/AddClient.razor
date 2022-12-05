@@ -1,6 +1,8 @@
 ﻿@page "/client/add"
 @page "/client/edit/{clientId:int}"
 @using BlazorApp1.Shared.Models
+@using System.Runtime.CompilerServices
+@using System.Net.Http.Headers
 @inject HttpClient Http
 @inject NavigationManager NavigationManager
 <h1>@Title Client</h1>
@@ -36,18 +38,133 @@
         <ValidationMessage For="@(() => client.CellNumber)" />
     </div>
     <div class="mb-3">
-        <label for="Emailid" class="form-label">E-mail</label>
-        <div class="col-md-4">
-            <InputText class="form-control" @bind-Value="client.EmailId" />
-        </div>
-        <ValidationMessage For="@(() => client.EmailId)" />
+	    <label for="Emailid" class="form-label">E-mail</label>
+	    <div class="col-md-4">
+		    <InputText class="form-control" @bind-Value="client.EmailId" />
+	    </div>
+	    <ValidationMessage For="@(() => client.EmailId)" />
     </div>
+
+    <div class="mb-3">
+	    <label for="Emailid" class="form-label">Photo</label>
+	    <div class="col-md-4">
+            <InputFile OnChange="@OnInputFileChange" />
+	    </div>
+	    <ValidationMessage For="@(() => client.FileName)" />
+    </div>
+
     <div class="form-group">
         <button type="submit" class="btn btn-primary">Save</button>
         <button class="btn btn-light" @onclick="Cancel">Cancel</button>
     </div>
 </EditForm>
 @code {
+	private List<File> files = new();
+
+	private int maxAllowedFiles = 3;
+	private bool shouldRender;
+    private async Task OnInputFileChange(InputFileChangeEventArgs e)
+    {
+        shouldRender = false;
+        long maxFileSize = 1024 * 15;
+        var upload = false;
+
+        using var content = new MultipartFormDataContent();
+
+        foreach (var file in e.GetMultipleFiles(maxAllowedFiles))
+        {
+            if (uploadResults.SingleOrDefault(
+                f => f.FileName == file.Name) is null)
+            {
+                try
+                {
+                    var fileContent =
+                        new StreamContent(file.OpenReadStream(maxFileSize));
+
+                    fileContent.Headers.ContentType =
+                        new MediaTypeHeaderValue(file.ContentType);
+
+                    files.Add(new() { Name = file.Name });
+
+                    content.Add(
+                        content: fileContent,
+                        name: "\"files\"",
+                        fileName: file.Name);
+
+                    upload = true;
+                }
+                catch (Exception ex)
+                {
+                    Logger.LogInformation(
+                        "{FileName} not uploaded (Err: 6): {Message}",
+                        file.Name, ex.Message);
+
+                    uploadResults.Add(
+                        new()
+                            {
+                                FileName = file.Name,
+                                ErrorCode = 6,
+                                Uploaded = false
+                            });
+                }
+            }
+        }
+
+        if (upload)
+        {
+            var client = ClientFactory.CreateClient();
+
+            var response =
+                await client.PostAsync("https://localhost:5001/Filesave",
+                content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var options = new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true,
+                    };
+
+                using var responseStream =
+                    await response.Content.ReadAsStreamAsync();
+
+                var newUploadResults = await JsonSerializer
+                    .DeserializeAsync<IList<UploadResult>>(responseStream, options);
+
+                if (newUploadResults is not null)
+                {
+                    uploadResults = uploadResults.Concat(newUploadResults).ToList();
+                }
+            }
+        }
+
+        shouldRender = true;
+    }
+
+    private static bool FileUpload(IList<UploadResult> uploadResults,
+        string? fileName, ILogger<FileUpload2> logger, out UploadResult result)
+    {
+        result = uploadResults.SingleOrDefault(f => f.FileName == fileName) ?? new();
+
+        if (!result.Uploaded)
+        {
+            logger.LogInformation("{FileName} not uploaded (Err: 5)", fileName);
+            result.ErrorCode = 5;
+        }
+
+        return result.Uploaded;
+    }
+
+    private class File
+    {
+        public string? Name { get; set; }
+    }
+
+
+
+
+
+
     [Parameter]
     public int clientId { get; set; }
     protected string Title = "Add";

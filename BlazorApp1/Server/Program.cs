@@ -14,7 +14,7 @@ builder.Services.AddDbContext<DatabaseContext>
 builder.Services.AddTransient<IClient, ClientService>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
-
+builder.Services.AddHttpClient(); // dlya failov learn.microsoft
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -2,6 +2,6 @@
 using Microsoft.AspNetCore.Http;
 public class ClientViewModel
 {
-    public string Name { get; set; }
+    public Client client { get; set; }
     public IFormFile Avatar { get; set; }
 }
