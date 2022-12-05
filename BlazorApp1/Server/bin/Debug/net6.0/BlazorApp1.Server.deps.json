@@ -14,7 +14,8 @@
           "Microsoft.AspNetCore.Components.WebAssembly.Server": "6.0.8",
           "Microsoft.EntityFrameworkCore": "7.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.0",
-          "Microsoft.EntityFrameworkCore.Tools": "7.0.0"
+          "Microsoft.EntityFrameworkCore.Tools": "7.0.0",
+          "Syncfusion.Pdf.Net.Core": "20.3.0.59"
         },
         "runtime": {
           "BlazorApp1.Server.dll": {}
@@ -607,6 +608,35 @@
           "lib/netstandard2.0/Mono.TextTemplating.dll": {
             "assemblyVersion": "2.2.0.0",
             "fileVersion": "2.2.1.1"
+          }
+        }
+      },
+      "Syncfusion.Compression.Net.Core/20.3.0.59": {
+        "runtime": {
+          "lib/net6.0/Syncfusion.Compression.Portable.dll": {
+            "assemblyVersion": "20.3600.0.59",
+            "fileVersion": "20.3600.0.59"
+          }
+        }
+      },
+      "Syncfusion.Licensing/20.3.0.59": {
+        "runtime": {
+          "lib/net6.0/Syncfusion.Licensing.dll": {
+            "assemblyVersion": "20.3.0.59",
+            "fileVersion": "20.3.0.59"
+          }
+        }
+      },
+      "Syncfusion.Pdf.Net.Core/20.3.0.59": {
+        "dependencies": {
+          "Syncfusion.Compression.Net.Core": "20.3.0.59",
+          "Syncfusion.Licensing": "20.3.0.59",
+          "System.Text.Encoding.CodePages": "5.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Syncfusion.Pdf.Portable.dll": {
+            "assemblyVersion": "20.3600.0.59",
+            "fileVersion": "20.3600.0.59"
           }
         }
       },
@@ -1286,6 +1316,27 @@
       "sha512": "sha512-KZYeKBET/2Z0gY1WlTAK7+RHTl7GSbtvTLDXEZZojUdAPqpQNDL6tHv7VUpqfX5VEOh+uRGKaZXkuD253nEOBQ==",
       "path": "mono.texttemplating/2.2.1",
       "hashPath": "mono.texttemplating.2.2.1.nupkg.sha512"
+    },
+    "Syncfusion.Compression.Net.Core/20.3.0.59": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eeOvo7toHOuQZgZlmOo9Fb/PoavcPcsmBUjiGOb336kbHV8cIEa31kXAV1wUQyXT1PQ0bMTJoIjm249gpQZKiw==",
+      "path": "syncfusion.compression.net.core/20.3.0.59",
+      "hashPath": "syncfusion.compression.net.core.20.3.0.59.nupkg.sha512"
+    },
+    "Syncfusion.Licensing/20.3.0.59": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-x382oKD8fd5LAq/6lF9FeAXWvWBTgV3wXaisGf0uQbGI+uDv1r7Zciq/E5+GtG6/jU7AjPFnfd2AZnCJkU8ioQ==",
+      "path": "syncfusion.licensing/20.3.0.59",
+      "hashPath": "syncfusion.licensing.20.3.0.59.nupkg.sha512"
+    },
+    "Syncfusion.Pdf.Net.Core/20.3.0.59": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/IOoY9aS9+nR2lS2LWxCBo3eo060oxOkA/gcAyODziyFLA6+jPQuk9Xlm+6uD6jQtXGbpk9qSdwvzVWdZVjuGQ==",
+      "path": "syncfusion.pdf.net.core/20.3.0.59",
+      "hashPath": "syncfusion.pdf.net.core.20.3.0.59.nupkg.sha512"
     },
     "System.Buffers/4.5.1": {
       "type": "package",

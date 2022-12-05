@@ -7,7 +7,7 @@ public class Student : Client
 {
     [Key, ForeignKey(nameof(Teachers))]
     public ICollection<Teacher> Teachers { get; set; }
-    [Key, ForeignKey(nameof(Teachers))]
+    [Key, ForeignKey(nameof(Parents))]
     public ICollection<Parent> Parents { get; set; }
     public Student()
     {

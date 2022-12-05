@@ -1,17 +1,17 @@
 ﻿@page "/fetchclientdetails"
 @using BlazorApp1.Shared.Models
 @using BlazorApp1.Client.Pages
-
 @inject HttpClient Http
 @inject NavigationManager uriHelper;
 <h1>Client Data</h1>
 <p>Blazor CRUD operation</p>
 <div class="row">
     <div class="col-md-6">
-        <a href='/client/add' class="btn btn-primary" role="button">
-            <i class="fas fa-client-plus"></i>
-            Add Client
-        </a>
+	    <a href='/client/add' class="btn btn-primary" role="button">
+		    <i class="fas fa-client-plus"></i>
+		    Add Client
+	    </a>
+
     </div>
     <div class="input-group col">
         <input type="text" class="form-control" placeholder="Search client by name"
@@ -37,11 +37,12 @@ else
 		<thead class="table-success">
 		<tr>
 			<th>ID</th>
-			<th>Name</th>
-			<th>Address</th>
-			<th>Department</th>
-			<th>Cell No</th>
+			<th>Vardas</th>
+			<th>Pavardė</th>
+			<th>Adresas</th>
+			<th>Telefonas</th>
 			<th>E-mail</th>
+			<th>Valdymas</th>
 		</tr>
 		</thead>
 		<tbody>
@@ -50,6 +51,7 @@ else
 			<tr>
 				<td>@client.ClientId</td>
 				<td>@client.ClientName</td>
+				<td>@client.ClientSurname</td>
 				<td>@client.Address</td>
 				<td>@client.CellNumber</td>
 				<td>@client.EmailId</td>

@@ -100,3 +100,6 @@ C:\Users\37060\source\repos\BlazorApp1\BlazorApp1\Server\bin\Debug\net6.0\runtim
 C:\Users\37060\source\repos\BlazorApp1\BlazorApp1\Server\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Users\37060\source\repos\BlazorApp1\BlazorApp1\Server\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\37060\source\repos\BlazorApp1\BlazorApp1\Server\bin\Debug\net6.0\Blazored.Modal.dll
+C:\Users\37060\source\repos\BlazorApp1\BlazorApp1\Server\bin\Debug\net6.0\Syncfusion.Compression.Portable.dll
+C:\Users\37060\source\repos\BlazorApp1\BlazorApp1\Server\bin\Debug\net6.0\Syncfusion.Licensing.dll
+C:\Users\37060\source\repos\BlazorApp1\BlazorApp1\Server\bin\Debug\net6.0\Syncfusion.Pdf.Portable.dll

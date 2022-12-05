@@ -1,4 +1,5 @@
-﻿using BlazorApp1.Shared.Models;
+﻿using System.IO;
+using BlazorApp1.Shared.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace BlazorApp1.Server.Models;
@@ -16,6 +17,9 @@ public partial class DatabaseContext : DbContext
     public virtual DbSet<Shared.Models.Student> Students { get; set; } = null!;
     public virtual DbSet<Shared.Models.Parent> Parents { get; set; } = null!;
     public virtual DbSet<Shared.Models.Teacher> Teachers { get; set; } = null!;
+
+
+    //public DbSet<Shared.Models.FileModel> Files { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

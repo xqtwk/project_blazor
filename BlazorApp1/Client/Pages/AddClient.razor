@@ -15,7 +15,7 @@
 	    <ValidationMessage For="@(() => client.ClientName)" />
     </div>
     <div class="mb-3">
-	    <label for="Name" class="form-label">Name</label>
+	    <label for="Name" class="form-label">Surname</label>
 	    <div class="col-md-4">
 		    <InputText class="form-control" @bind-Value="client.ClientSurname" />
 	    </div>
@@ -29,7 +29,7 @@
         <ValidationMessage For="@(() => client.Address)" />
     </div>
     <div class="mb-3">
-        <label for="Cellnumber" class="form-label">Cell No</label>
+        <label for="Cellnumber" class="form-label">Phone number</label>
         <div class="col-md-4">
             <InputText class="form-control" @bind-Value="client.CellNumber" />
         </div>
