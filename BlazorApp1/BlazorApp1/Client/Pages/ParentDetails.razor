@@ -13,7 +13,7 @@
 	    </a>
 	</div
         <div class="input-group col">
-        <input type="text" class="form-control" placeholder="Search student by name"
+        <input type="text" class="form-control" placeholder="Search parent by name"
                @bind="SearchString" @bind:event="oninput" @onkeyup="FilterClient" />
         @if (SearchString.Length > 0)
         {
@@ -87,7 +87,7 @@ else
     }
     protected async Task GetClient()
     {
-        clientList = await Http.GetFromJsonAsync<List<Student>>("api/Student"); // maybe api/Student
+        clientList = await Http.GetFromJsonAsync<List<Student>>("api/Parent"); // maybe api/Student
         searchClientData = clientList;
     }
     protected void FilterClient()

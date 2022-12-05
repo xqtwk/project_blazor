@@ -91,6 +91,12 @@ public partial class DatabaseContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false);
         });
+        modelBuilder.Entity<Student>()
+            .HasMany(t => t.Teachers)
+            .WithMany(b => b.Students);
+        modelBuilder.Entity<Student>()
+            .HasMany(t => t.Parents)
+            .WithMany(b => b.Childs);
         /*modelBuilder.Entity<Shared.Models.Student>(entity =>
         {
             entity.HasMany(t => t.Teachers).WithMany(b => b.Students);
